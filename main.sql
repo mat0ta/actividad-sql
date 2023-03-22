@@ -2,7 +2,7 @@
 SELECT * FROM production ORDER BY Year DESC;
 
 -- Selecciona todas las filas de la tabla que estén entre el año 2005 y 2010 y que hayan sido realizadas en los meses de Junio y Octubre
-SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS '6' OR Month IS '10';
+SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS 6 OR Month IS 10;
 
 -- Selcciona todos los elementos de la columna Field y los actualiza capitalizando únicamente la primera letra
 UPDATE production SET Field = LOWER(LEFT(Field, 1)) + SUBSTRING(Field, 2, LEN(Field));
