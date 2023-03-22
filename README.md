@@ -48,3 +48,21 @@ UPDATE production SET Field = LOWER(LEFT(Field, 1)) + SUBSTRING(Field, 2, LEN(Fi
 ```
 
 ***
+
+Además de la columna de las instalaciones, hemos actualizado todos los datos que tenga un valor nulo son rellenadas con el valor "Desconocida" utilizando:
+
+**UPDATE, SET, WHERE, NULL**
+
+```sql
+UPDATE production SET Installation = 'Desconocida' WHERE Installation IS NULL;
+```
+
+***
+
+Además hemos eliminado todas las filas cuya producción se ha realizado en un pozo concreto en este caso (1-CSF-1-AL) aplicando:
+
+**DELETE FROM, WHERE**
+
+```sql
+DELETE FROM production WHERE Well IS '1-CSF-1-AL';
+```
