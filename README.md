@@ -27,6 +27,9 @@ Primero hemos seleccionado todas las columnas de la tabla y las hemos ordenados 
 SELECT * FROM production ORDER BY Year DESC;
 ```
 
+![image](https://user-images.githubusercontent.com/91721855/226999506-e24a6db5-47d3-4506-86b5-d0a7b28ce38b.png)
+
+
 ***
 
 Después hemos seleccionado solo las columnas entre el año 2005 y 2010 y solamente entre Junio y Octubre aplicando
