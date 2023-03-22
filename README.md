@@ -59,10 +59,29 @@ UPDATE production SET Installation = 'Desconocida' WHERE Installation IS NULL;
 
 ***
 
-Además hemos eliminado todas las filas cuya producción se ha realizado en un pozo concreto en este caso (1-CSF-1-AL) aplicando:
+A continuación hemos eliminado todas las filas cuya producción se ha realizado en un pozo concreto en este caso (1-CSF-1-AL) aplicando:
 
 **DELETE FROM, WHERE**
 
 ```sql
 DELETE FROM production WHERE Well IS '1-CSF-1-AL';
+```
+
+***
+
+Después hemos insertado una nueva fila en la tabla production usando:
+
+**INSERT INTO, VALUES**
+
+```sql
+INSERT INTO production (Year, Month, State, Basin, Field, Well, Enviroment, Installation, ) VALUES ('1-CSF-1-AL', 'CSF', 'AL', 2010, 1, 1000);
+```
+
+***
+
+Luego hemos renombrado todas las columnas de la tabla *production* que tenían un espacio en blanco por un guión bajo utilizando:
+
+**SELECT * FROM, WHERE, LIKE, REPLACE**
+
+```sql
 ```
