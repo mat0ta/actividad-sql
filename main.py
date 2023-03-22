@@ -15,8 +15,9 @@ def run_sql():
 def run_query():
     conn = sqlite3.connect('./db.sqlite')
     c = conn.cursor()
-    c.execute("SELECT * FROM production WHERE COLUMN_NAME LIKE '% %' REPLACE(COLUMN_NAME, ' ', '_');")
+    c.execute("INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (?,?,?,?,?,?,?,?,?)", (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333333))
     print(c.fetchall())
+    conn.commit()
     conn.close()
 
 if __name__ == '__main__':

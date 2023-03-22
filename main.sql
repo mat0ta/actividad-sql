@@ -13,8 +13,5 @@ UPDATE production SET Installation = 'Desconocida' WHERE Installation IS NULL;
 -- Elimina todas las filas cuya producción se ha realizado en un pozo concreto
 DELETE FROM production WHERE Well IS '1-CSF-1-AL';
 
--- Inserta una nueva fila en la tabla production
-INSERT INTO production (Year, Month, State, Basin, Field, Well, Enviroment, Installation, ) VALUES ('1-CSF-1-AL', 'CSF', 'AL', 2010, 1, 1000);
-
--- Renombra todas las columnas de la tabla production que tengan un espacio en blanco por un guión bajo
-SELECT * FROM production WHERE COLUMN_NAME LIKE '% %' REPLACE(COLUMN_NAME, ' ', '_');
+-- Inserta una nueva fila en la tabla production con nuevos datos
+INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333333);
