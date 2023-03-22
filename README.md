@@ -15,7 +15,7 @@ Hemos buscado un [dataset](https://www.kaggle.com/datasets/luciodias/brazil-oil-
 
 La única tabla presente en esta y que recoge todos los datos se llama *production*.
 
-Primero hemos creado el archivo main.sql con los comandos y el archivo main.py desde python para poder ejecutarlos.
+Primero hemos creado el archivo main.sql con los comandos y el archivo main.py desde python para poder ejecutarlos y testear que todo este correcto.
 
 <h2 align="center">Comandos utilizados</h2>
 
@@ -29,12 +29,12 @@ SELECT * FROM production ORDER BY Year DESC;
 
 ***
 
-Después hemos seleccionado solo las columnas entre el año 2005 y 2010 y solamente Junio y Octubre aplicando
+Después hemos seleccionado solo las columnas entre el año 2005 y 2010 y solamente entre Junio y Octubre aplicando
 
 **SELECT * FROM, WHERE, BETWEEN, AND**
 
 ```sql
-SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS '6' OR Month IS '10';
+SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month >= 6 AND Month <= 10;
 ```
 
 ***
@@ -47,6 +47,15 @@ Luego hemos seleccionados todos los elementos de la columna Field y los hemos ac
 UPDATE production SET Field = UPPER(substr(Field, 1, 1)) || LOWER(substr(Field, 2, LENGTH(Field)));
 ```
 
+Antes:
+
+![image](https://user-images.githubusercontent.com/91721855/226998191-650f037d-e639-46c2-84fe-ac649f3dea83.png)
+
+Después:
+
+![image](https://user-images.githubusercontent.com/91721855/226998032-a6505cf6-7e7f-4d1a-a5ed-1c2dac2e9f2f.png)
+
+
 ***
 
 Además de la columna de las instalaciones, hemos actualizado todos los datos que tenga un valor nulo son rellenadas con el valor "Desconocida" utilizando:
@@ -56,6 +65,13 @@ Además de la columna de las instalaciones, hemos actualizado todos los datos qu
 ```sql
 UPDATE production SET Installation = 'Desconocida' WHERE Installation IS NULL;
 ```
+Antes:
+
+![image](https://user-images.githubusercontent.com/91721855/226998341-f6c3fe3a-91cc-4748-8641-32de74c3b3f6.png)
+
+Después:
+
+![image](https://user-images.githubusercontent.com/91721855/226998418-e3f38030-7855-410a-a2c6-82401b1b702a.png)
 
 ***
 
@@ -67,6 +83,14 @@ A continuación hemos eliminado todas las filas cuya producción se ha realizado
 DELETE FROM production WHERE Well IS '1-CSF-1-AL';
 ```
 
+Antes:
+
+![image](https://user-images.githubusercontent.com/91721855/226998515-a306215d-925b-444e-bbf5-b23cba293a00.png)
+
+Después:
+
+![image](https://user-images.githubusercontent.com/91721855/226998615-f8c5a1c2-24b0-4272-a7f2-096fb900b801.png)
+
 ***
 
 Después hemos insertado una nueva fila en la tabla production usando:
@@ -77,5 +101,6 @@ Después hemos insertado una nueva fila en la tabla production usando:
 INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333333);
 ```
 
-***
+![image](https://user-images.githubusercontent.com/91721855/226997912-1c908375-3100-4916-9cc5-e1386667df94.png)
 
+***
