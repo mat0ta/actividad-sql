@@ -15,7 +15,7 @@ def run_sql():
 def run_query():
     conn = sqlite3.connect('./db.sqlite')
     c = conn.cursor()
-    c.execute("UPDATE production SET Field = UPPER(substr(Field, 1, 1)) || LOWER(substr(Field, 2, LENGTH(Field)))")
+    c.execute("DELETE FROM production WHERE Well IS '1-CSF-1-AL';")
     print(c.fetchall())
     conn.commit()
     conn.close()

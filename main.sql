@@ -1,8 +1,8 @@
 -- Selecciona todas las columnas de la tabla production y las ordena por el campo Year en orden descendente
 SELECT * FROM production ORDER BY Year DESC;
 
--- Selecciona todas las filas de la tabla que estén entre el año 2005 y 2010 y que hayan sido realizadas en los meses de Junio y Octubre
-SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS 6 OR Month IS 10;
+-- Selecciona todas las filas de la tabla que estén entre el año 2005 y 2010 y que hayan sido realizadas entre los meses de Junio y Octubre
+SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month >= 6 AND Month <= 10;
 
 -- Selecciona todos los elementos de la columna Field y los actualiza capitalizando únicamente la primera letra
 UPDATE production SET Field = UPPER(substr(Field, 1, 1)) || LOWER(substr(Field, 2, LENGTH(Field)));
@@ -15,4 +15,3 @@ DELETE FROM production WHERE Well IS '1-CSF-1-AL';
 
 -- Inserta una nueva fila en la tabla production con nuevos datos
 INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333.14);
-
