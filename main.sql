@@ -6,3 +6,9 @@ SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS '6' OR Mo
 
 -- Selcciona todos los elementos de la columna Field y los actualiza capitalizando únicamente la primera letra
 UPDATE production SET Field = LOWER(LEFT(Field, 1)) + SUBSTRING(Field, 2, LEN(Field));
+
+-- De la columna de las instalaciones, todas aquellas que tenga un valor nulo son rellenadas con el valor "Desconocida"
+UPDATE production SET Installation = 'Desconocida' WHERE Installation IS NULL;
+
+-- Elimina todas las filas cuya producción se ha realizado en un pozo concreto
+DELETE FROM production WHERE Well IS '1-CSF-1-AL';
