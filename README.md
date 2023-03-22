@@ -41,10 +41,10 @@ SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS '6' OR Mo
 
 Luego hemos seleccionados todos los elementos de la columna Field y los hemos actualizado capitalizando únicamente la primera letra usando:
 
-**UPDATE, SET, LOWER, LEFT, SUBSTRING, LEN**
+**UPDATE, SET, UPPER, LOWER, LENGTH, substr**
 
 ```sql
-UPDATE production SET Field = LOWER(LEFT(Field, 1)) + SUBSTRING(Field, 2, LEN(Field));
+UPDATE production SET Field = UPPER(substr(Field, 1, 1)) || LOWER(substr(Field, 2, LENGTH(Field)));
 ```
 
 ***
@@ -74,14 +74,8 @@ Después hemos insertado una nueva fila en la tabla production usando:
 **INSERT INTO, VALUES**
 
 ```sql
-INSERT INTO production (Year, Month, State, Basin, Field, Well, Enviroment, Installation, ) VALUES ('1-CSF-1-AL', 'CSF', 'AL', 2010, 1, 1000);
+INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333333);
 ```
 
 ***
 
-Luego hemos renombrado todas las columnas de la tabla *production* que tenían un espacio en blanco por un guión bajo utilizando:
-
-**SELECT * FROM, WHERE, LIKE, REPLACE**
-
-```sql
-```
