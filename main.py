@@ -12,5 +12,12 @@ def run_sql():
     conn.commit()
     conn.close()
 
+def run_query():
+    conn = sqlite3.connect('./db.sqlite')
+    c = conn.cursor()
+    c.execute("SELECT * FROM production WHERE COLUMN_NAME LIKE '% %' REPLACE(COLUMN_NAME, ' ', '_');")
+    print(c.fetchall())
+    conn.close()
+
 if __name__ == '__main__':
-    run_sql()
+    run_query()
