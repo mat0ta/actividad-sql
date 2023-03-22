@@ -40,6 +40,8 @@ Después hemos seleccionado solo las columnas entre el año 2005 y 2010 y solame
 SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month >= 6 AND Month <= 10;
 ```
 
+![image](https://user-images.githubusercontent.com/91721855/227002939-f617c45b-adbb-4b32-8312-efdb294aeedf.png)
+
 ***
 
 Luego hemos seleccionados todos los elementos de la columna Field y los hemos actualizado capitalizando únicamente la primera letra usando:
