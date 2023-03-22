@@ -15,3 +15,15 @@ DELETE FROM production WHERE Well IS '1-CSF-1-AL';
 
 -- Inserta una nueva fila en la tabla production con nuevos datos
 INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333.14);
+
+-- Reemplaza todos los años 2021 con 2022
+UPDATE production SET Year = 2022 WHERE Year = 2020;
+
+-- Elimina todas los datos entre el año 1993 y 1995
+DELETE FROM production WHERE Year BETWEEN 1993 AND 1995;
+
+-- Cambia los datos del environment de Sea a Ocean
+UPDATE production SET Environment = 'Ocean' WHERE Environment = 'Sea';
+
+-- Elimina todas los datos de enero
+DELETE FROM production WHERE Month = 1;
