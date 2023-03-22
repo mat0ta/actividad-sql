@@ -107,3 +107,61 @@ INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Ins
 ![image](https://user-images.githubusercontent.com/91721855/226997912-1c908375-3100-4916-9cc5-e1386667df94.png)
 
 ***
+
+Luego reemplazamos todos los años 2021 con 2022
+
+```sql
+UPDATE production SET Year = 2022 WHERE Year = 2020;
+```
+Antes:
+
+![image](https://user-images.githubusercontent.com/91721855/227001492-f8830c87-78cf-4b0d-b4a8-bedc8de82158.png)
+
+Después:
+
+![image](https://user-images.githubusercontent.com/91721855/227001614-922df7d8-2970-4028-8e20-0b6b6e6365dc.png)
+
+![image](https://user-images.githubusercontent.com/91721855/227001690-2fa8126f-e56d-418c-8a3b-e39b31c4fe31.png)
+
+*** 
+
+Elimina todas los datos entre el año 1993 y 1995
+
+```sql
+DELETE FROM production WHERE Year BETWEEN 1993 AND 1995;
+```
+
+Antes:
+
+![image](https://user-images.githubusercontent.com/91721855/227001876-e5c81360-ac78-4123-b552-9f4d692f2d7a.png)
+
+Después:
+
+![image](https://user-images.githubusercontent.com/91721855/227001962-ab5b2fa4-155a-4a02-8ae6-bf3c904a2829.png)
+
+-- Cambia los datos del environment de Sea a Ocean
+
+```sql
+UPDATE production SET Environment = 'Ocean' WHERE Environment = 'Sea';
+```
+
+Antes:
+
+![image](https://user-images.githubusercontent.com/91721855/227002250-066722f1-7fd5-4911-8ace-7b4f867607bf.png)
+
+Después:
+
+![image](https://user-images.githubusercontent.com/91721855/227002354-4afc7bf8-b5a1-43d5-a1e6-a35fe3e55fdf.png)
+
+-- Elimina todas los datos de enero
+```sql
+DELETE FROM production WHERE Month = 1;
+```
+
+Antes:
+
+![image](https://user-images.githubusercontent.com/91721855/227002664-4a9458ae-e65b-4e36-b3fb-5e15cbfaac62.png)
+
+Después:
+
+![image](https://user-images.githubusercontent.com/91721855/227002757-63dc793f-2dc8-4c50-b145-9d27a0fa70fa.png)
