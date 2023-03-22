@@ -15,7 +15,7 @@ def run_sql():
 def run_query():
     conn = sqlite3.connect('./db.sqlite')
     c = conn.cursor()
-    c.execute("INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (?,?,?,?,?,?,?,?,?)", (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333333))
+    c.execute("UPDATE production SET Field = UPPER(substr(Field, 1, 1)) || LOWER(substr(Field, 2, LENGTH(Field)))")
     print(c.fetchall())
     conn.commit()
     conn.close()

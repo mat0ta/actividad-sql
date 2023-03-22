@@ -5,7 +5,7 @@ SELECT * FROM production ORDER BY Year DESC;
 SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS 6 OR Month IS 10;
 
 -- Selecciona todos los elementos de la columna Field y los actualiza capitalizando únicamente la primera letra
-UPDATE production SET Field = LOWER(LEFT(Field, 1)) + SUBSTRING(Field, 2, LEN(Field));
+UPDATE production SET Field = UPPER(substr(Field, 1, 1)) || LOWER(substr(Field, 2, LENGTH(Field)));
 
 -- De la columna de las instalaciones, todas aquellas que tenga un valor nulo son rellenadas con el valor "Desconocida"
 UPDATE production SET Installation = 'Desconocida' WHERE Installation IS NULL;
@@ -14,4 +14,5 @@ UPDATE production SET Installation = 'Desconocida' WHERE Installation IS NULL;
 DELETE FROM production WHERE Well IS '1-CSF-1-AL';
 
 -- Inserta una nueva fila en la tabla production con nuevos datos
-INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333333);
+INSERT INTO production (Year, Month, State, Basin, Field, Well, Environment, Installation, 'Oil (m³)') VALUES (2023, 3, 'MAD', 'Madrid', 'Madrid', '14-ALO-33', 'Land', 'Nanolandia', 333.14);
+
