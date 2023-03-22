@@ -17,7 +17,7 @@ La única tabla presente en esta y que recoge todos los datos se llama *producti
 
 Primero hemos creado el archivo main.sql con los comandos y el archivo main.py desde python para poder ejecutarlos.
 
-<h3 align="center">Comandos utilizados</h3>
+<h2 align="center">Comandos utilizados</h2>
 
 Primero hemos seleccionado todas las columnas de la tabla y las hemos ordenados por el año en orden descendente utilizando 
 
