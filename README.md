@@ -21,7 +21,7 @@ Primero hemos creado el archivo main.sql con los comandos y el archivo main.py d
 
 Primero hemos seleccionado todas las columnas de la tabla y las hemos ordenados por el año en orden descendente utilizando 
 
-**SELECT, ORDER BY, DESC**
+**SELECT * FROM, ORDER BY, DESC**
 
 ```sql
 SELECT * FROM production ORDER BY Year DESC;
@@ -31,7 +31,7 @@ SELECT * FROM production ORDER BY Year DESC;
 
 Después hemos seleccionado solo las columnas entre el año 2005 y 2010 y solamente Junio y Octubre aplicando
 
-**SELECT, WHERE, BETWEEN, AND**
+**SELECT * FROM, WHERE, BETWEEN, AND**
 
 ```sql
 SELECT * FROM production WHERE Year BETWEEN 2005 AND 2010 AND Month IS '6' OR Month IS '10';
